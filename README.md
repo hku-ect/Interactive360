@@ -1,7 +1,7 @@
 # Interactive360
 Custom version of Unity interactive 360 example for use with monoscopic 360 content for VR.
 
-Based on Unity's own example code:
+Based on Unity's own example code: https://blogs.unity3d.com/2018/01/19/getting-started-in-interactive-360-video-download-our-sample-project/
 
 Changes include:
   - Additive loading of scenes to prevent delays when transitioning
