@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5804399, g: 0.5051395, b: 0.40388197, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7235e5565fff12f409c5c5d991ff7d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stickToCamera: 1
 --- !u!1 &232824761
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +338,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232824761}
-  m_LocalRotation: {x: -0.080692835, y: 0.73917824, z: 0.090022475, w: 0.6625709}
+  m_LocalRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -613,7 +614,6 @@ MonoBehaviour:
   distance: 161
   pitch: 93.1
   yaw: -91
-  hotspotCenter: {fileID: 58941074}
 --- !u!1 &725729883
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +734,6 @@ MonoBehaviour:
   distance: 225
   pitch: 91.3
   yaw: 91
-  hotspotCenter: {fileID: 58941074}
 --- !u!114 &1124955109
 MonoBehaviour:
   m_ObjectHideFlags: 0
