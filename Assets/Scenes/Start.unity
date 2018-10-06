@@ -192,7 +192,7 @@ Prefab:
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}
       propertyPath: scenesToLoad.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4439305661080956, guid: cff31d6d73c6b684d9170ce0698a3b79, type: 2}
       propertyPath: m_LocalPosition.x
@@ -244,18 +244,18 @@ Prefab:
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}
       propertyPath: scenesToLoad.Array.data[0].sceneName
-      value: SampleVideoScene1
+      value: SamplePhotoScene
       objectReference: {fileID: 0}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}
       propertyPath: scenesToLoad.Array.data[0].id
-      value: 99c9720ab356a0642a771bea13969a05
+      value: f41d71074bfda144dab6398d9351cc2b
       objectReference: {fileID: 0}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}
       propertyPath: scenesToLoad.Array.data[0].sceneObject
       value: 
-      objectReference: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05,
+      objectReference: {fileID: 102900000, guid: f41d71074bfda144dab6398d9351cc2b,
         type: 3}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}

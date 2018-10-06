@@ -29,14 +29,17 @@ public class PhotoSphere : MonoBehaviour {
 	}
 	
 	public void Show() {
-		if ( useWebCam && camTex == null ) {
-			camTex = new WebCamTexture(webCamName);
-			rend.material.shader = Shader.Find("UI/Default");
+		if ( useWebCam ) {
+
+			if ( camTex == null ) {
+				camTex = new WebCamTexture(webCamName);
+				rend.material.shader = Shader.Find("UI/Default");
+			}
+
+			rend.material.mainTexture = camTex;
+			camTex.Play();
 		}
 
-		rend.material.mainTexture = camTex;
-		camTex.Play();
-		
 		rend.enabled = true;
 	}
 

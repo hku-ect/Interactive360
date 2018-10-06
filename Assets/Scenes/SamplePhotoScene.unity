@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.6369686, g: 0.56917936, b: 0.5171058, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,7 +184,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232824761}
-  m_LocalRotation: {x: 0.097861975, y: -0.77707934, z: 0.124853976, w: 0.60908306}
+  m_LocalRotation: {x: -0.03720754, y: 0.9440739, z: -0.11441972, w: -0.30699867}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -396,6 +396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0184a5c7cec7c4cadd4e546ea7372b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  webCamNames: []
+  useWebCam: 0
+  webCamName: 
 --- !u!1 &975826430
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1601898253}
   - component: {fileID: 1601898254}
+  - component: {fileID: 1601898255}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -745,3 +749,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1601898255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601898252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58415f6b0ec2c624d9899155a8fc2e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minVolume: 0
+  maxVolume: 1
+  fallOffDegrees: 90
+  fallOffType: 0
