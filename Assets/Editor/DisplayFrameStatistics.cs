@@ -6,9 +6,10 @@ using UnityEngine.Video;
 
 [CustomEditor(typeof(VideoPlayer))]
 public class DisplayFrameStatistics : Editor {
-    
+    internal static DisplayFrameStatistics instance;
+
     VideoPlayer vpTarget;
-    Rect windowRect = new Rect(2,20,200,100);
+    internal Rect windowRect = new Rect(20,20,200,100);
     const string FRAME = "Frame: ";
     const string DIV = " / ";
     float frameSlider = 0;
@@ -17,17 +18,19 @@ public class DisplayFrameStatistics : Editor {
         vpTarget = target as VideoPlayer;
         vpTarget.seekCompleted += SeekCompleted;
         UpdateSlider();
+        instance = this;
     }
 
     void OnDisable() {
          vpTarget.seekCompleted -= SeekCompleted;
+         instance = null;
     }
 
     void OnSceneGUI() {
         GUI.Window(0, windowRect, SceneWindow, "Preview Controls");
     }
 
-    void SceneWindow(int id) {
+    internal void SceneWindow(int id) {
         //TODO: use images
         GUILayout.BeginHorizontal();
         if ( !vpTarget.isPlaying ) {
@@ -62,6 +65,8 @@ public class DisplayFrameStatistics : Editor {
         ulong fCount = vpTarget.frameCount;
         long curFrame = vpTarget.frame;
         GUILayout.Label( FRAME + curFrame + DIV + fCount );
+
+        GUI.DragWindow();
     }
 
     void SeekCompleted( VideoPlayer source ) {

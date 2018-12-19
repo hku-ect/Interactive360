@@ -160,7 +160,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4963939019307070, guid: ffc720a8724cdcd4eb30b387945b6159, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4963939019307070, guid: ffc720a8724cdcd4eb30b387945b6159, type: 2}
       propertyPath: m_LocalRotation.z
@@ -168,7 +168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4963939019307070, guid: ffc720a8724cdcd4eb30b387945b6159, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4963939019307070, guid: ffc720a8724cdcd4eb30b387945b6159, type: 2}
       propertyPath: m_RootOrder
@@ -178,6 +178,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963939019307070, guid: ffc720a8724cdcd4eb30b387945b6159, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc720a8724cdcd4eb30b387945b6159, type: 2}
@@ -244,18 +248,18 @@ Prefab:
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}
       propertyPath: scenesToLoad.Array.data[0].sceneName
-      value: SamplePhotoScene
+      value: SampleVideoScene1
       objectReference: {fileID: 0}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}
       propertyPath: scenesToLoad.Array.data[0].id
-      value: f41d71074bfda144dab6398d9351cc2b
+      value: 99c9720ab356a0642a771bea13969a05
       objectReference: {fileID: 0}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}
       propertyPath: scenesToLoad.Array.data[0].sceneObject
       value: 
-      objectReference: {fileID: 102900000, guid: f41d71074bfda144dab6398d9351cc2b,
+      objectReference: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05,
         type: 3}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 2}

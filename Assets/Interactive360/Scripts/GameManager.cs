@@ -54,6 +54,10 @@ namespace Interactive360
             {
                 Destroy(gameObject);
             }
+
+            if ( Camera.main != null ) {
+                Camera.main.transform.rotation = Quaternion.identity;
+            }
         }
 
         IEnumerator GlobalFrameUpdate() {
@@ -86,14 +90,19 @@ namespace Interactive360
             StartCoroutine( GlobalFrameUpdate() );
         }
 
-        public void SwitchSceneProperly(string newScene ) {
+        //returns true if scene switched to is not the current scene
+        public bool SwitchSceneProperly( string newScene ) {
+            Scene active = SceneManager.GetActiveScene();
             Scene ns = SceneManager.GetSceneByName(newScene);
             StartCoroutine(HandleSceneActivation(ns));
+            return active != ns;
         }
 
-        IEnumerator HandleSceneActivation( Scene newScene ) { 
+        IEnumerator HandleSceneActivation( Scene newScene ) {
             if ( activeSc != null ) {
-                Deactivate( activeSc.Value );
+                if ( activeSc.Value != newScene ) {
+                    Deactivate( activeSc.Value );
+                }
             }
 
             SceneManager.SetActiveScene(newScene);
@@ -139,8 +148,29 @@ namespace Interactive360
             //find videoplayer
             if ( sc.FindInScene<VideoPlayer>(out vp ) ) {
                 vp.Play();
-                if ( globalFrame > 0 && vp.clip.frameCount > 0 && vp.isLooping ) {
-                    vp.frame = (long) ( globalFrame % vp.clip.frameCount );
+
+                if ( SceneTransitionData.fromTransition ) {
+                    switch( SceneTransitionData.style ) {
+                        case SceneTransitionStyle.START_FROM_BEGINNING:
+                            vp.frame = 0;
+                        break;
+                        case SceneTransitionStyle.START_FROM_FRAME:
+                            vp.frame = SceneTransitionData.startFrame;
+                        break;
+                        case SceneTransitionStyle.LOOPED_FROM_GLOBAL_TIME:
+                            long frame = 0;
+                            if ( globalFrame > 0 && vp.clip.frameCount > 0 && vp.isLooping ) {
+                                frame = (long) ( globalFrame % vp.clip.frameCount );
+                            }
+                            vp.frame = frame;
+                        break;
+                    }
+                }
+                else {
+                    // default behaviour
+                    if ( globalFrame > 0 && vp.clip.frameCount > 0 && vp.isLooping ) {
+                        vp.frame = (long) ( globalFrame % vp.clip.frameCount );
+                    }
                 }
             }
 
@@ -159,6 +189,8 @@ namespace Interactive360
             if ( sc.FindInScene<SceneObjects>(out scObjs ) ) {
                 scObjs.Show();
             }
+
+            SceneTransitionData.fromTransition = false;
         }
 
 

@@ -24,7 +24,7 @@ public class SceneObjects : MonoBehaviour {
 		foreach( Transform t in transform ) {
 			t.gameObject.SetActive(true);
             AudioSource asrc = t.gameObject.GetComponent<AudioSource>();
-            if (asrc) asrc.Play();
+            if (asrc && asrc.playOnAwake) asrc.Play();
 		}
 	}
 

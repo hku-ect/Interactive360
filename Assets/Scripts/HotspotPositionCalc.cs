@@ -33,6 +33,9 @@ public class HotspotPositionCalc : MonoBehaviour {
 [CustomEditor(typeof(HotspotPositionCalc))]
 public class HotSpotInspector : Editor {
 
+	internal static HotSpotInspector instance;
+	internal Rect rect = new Rect(2,20,200,100);
+
 	float dist, p, y;
 	HotspotPositionCalc cTarg;
 
