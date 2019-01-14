@@ -80,6 +80,7 @@ namespace Interactive360
             foreach( SceneReference sr in scenesToLoad ) {
                 AsyncOperation op = SceneManager.LoadSceneAsync( sr, LoadSceneMode.Additive );
                 yield return op;
+                Deactivate( SceneManager.GetSceneByName(sr) );
             }
 
             //skip a frame before activation
